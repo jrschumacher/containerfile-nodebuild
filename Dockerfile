@@ -1,6 +1,16 @@
 # syntax=docker/dockerfile:1.2
 FROM public.ecr.aws/docker/library/node:18-alpine
 
+# OCI Annotations from https://github.com/opencontainers/image-spec/blob/master/annotations.md
+LABEL org.opencontainers.image.maintainer="Ryan Schumacher"                                    \
+      org.opencontainers.image.authors="Ryan Schumacher"                                       \
+      org.opencontainers.image.title="Node build"                                              \
+      org.opencontainers.image.url="https://github.com/jrschumacher/containerfile-nodebuild"   \
+      org.opencontainers.image.description="Node builder with ssh agent support"               \
+      # SPDX License Expression format;
+      org.opencontainers.image.licenses="MIT"                                                  \
+      org.opencontainers.image.version="RELEASE"
+
 ARG USER=user
 ARG UID=10001
 ARG GID=10001
