@@ -20,7 +20,7 @@ jobs:
       
     strategy:
       matrix:
-        node: [18]
+        node-version: [18]
 
     steps:
       - name: Checkout repository
@@ -44,4 +44,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.strategy.matrix.node }}-alpine
+          tags: ${{ matrix.node-version }}-alpine
