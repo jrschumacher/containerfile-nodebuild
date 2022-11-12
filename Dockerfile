@@ -42,8 +42,4 @@ RUN apk update && \
 
 WORKDIR /build
 
-COPY package.json package-lock.json ./
-
-RUN --mount=type=ssh,uid=10001 npm ci
-
 CMD [ "node" ]
